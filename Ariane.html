@@ -15154,7 +15154,7 @@ exports.timer = TimerWidget;
 <div created="20190131095133106" modified="20190204073846148" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20190224190150755" list="[[Fils d'IA1]] [[$:/Tiddler Breadcrumbs Flat]] Todo [[$:/Tiddler Breadcrumbs Template]]" modified="20190224191340530" title="$:/StoryList">
+<div created="20190224194742297" list="Todo [[$:/Tiddler Breadcrumbs Template]] [[Petit-Fils d'IA1]] [[Fils d'IA1]] [[$:/Tiddler Breadcrumbs Flat]]" modified="20190224195638298" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190205093513907" modified="20190207091557313" title="$:/temp/advancedsearch">
@@ -18127,10 +18127,10 @@ input, textarea, button, select {
     }
 }</pre>
 </div>
-<div created="20190224190828929" modified="20190224191009260" tags="BreadCrumbs" title="$:/Tiddler Breadcrumbs Flat" type="application/x-tiddler-dictionary">
+<div created="20190224190828929" modified="20190224195701044" tags="BreadCrumbs" title="$:/Tiddler Breadcrumbs Flat" type="application/x-tiddler-dictionary">
 <pre>style:flat</pre>
 </div>
-<div apex_tag="IA" caption="Le Template BreadCrumbs" created="20151230084404491" length_limit="3" list-after="$:/core/ui/ViewTemplate/subtitle" modified="20190224194613957" sub.num="02" tags="BreadCrumbs $:/tags/ViewTemplate" title="$:/Tiddler Breadcrumbs Template" type="" use_apex_tag="true">
+<div apex_tag="IA" caption="Le Template BreadCrumbs" created="20151230084404491" length_limit="3" list-after="$:/core/ui/ViewTemplate/subtitle" modified="20190224195604301" sub.num="02" tags="BreadCrumbs $:/tags/ViewTemplate" title="$:/Tiddler Breadcrumbs Template" type="" use_apex_tag="true">
 <pre>\define yetAgain()
 &lt;$reveal type='match' state='$:/Tiddler Breadcrumbs Template!!use_apex_tag' text='true'&gt;
 	&lt;$reveal type='match' state='!!title' text={{$:/Tiddler Breadcrumbs Template!!apex_tag}}&gt;
@@ -18203,7 +18203,7 @@ input, textarea, button, select {
 
 \define breadcrumbs()
 &lt;$set name=flat value={{$:/Tiddler Breadcrumbs Flat##style}}&gt;
-&lt;&lt;styledbreadcrumbs flat &gt;&gt;
+&lt;&lt;styledbreadcrumbs $(flat)$ &gt;&gt;
 &lt;/$set&gt;
 
 &lt;style&gt;
