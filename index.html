@@ -15447,7 +15447,7 @@ exports.timer = TimerWidget;
 <div created="20190226110244022" modified="20190226110244022" title="$:/state/tree/$:/plugins/">
 <pre>show</pre>
 </div>
-<div created="20190226141659484" list="" modified="20190226142626732" title="$:/StoryList">
+<div created="20190226150809019" list="[[$:/Tiddler Breadcrumbs Flat]] [[Petit-Fils d'IA1]]" modified="20190226150809019" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190205093513907" modified="20190207091557313" title="$:/temp/advancedsearch">
@@ -15475,7 +15475,7 @@ exports.timer = TimerWidget;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///C:/Users/administrateur/Downloads/Ariane.html&quot;
+            &quot;text&quot;: &quot;file:///C:/Users/administrateur/Documents/GitHub/ariane/index.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -15495,7 +15495,7 @@ exports.timer = TimerWidget;
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/C:/Users/administrateur/Downloads/Ariane.html&quot;
+            &quot;text&quot;: &quot;/C:/Users/administrateur/Documents/GitHub/ariane/index.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -18420,7 +18420,7 @@ input, textarea, button, select {
     }
 }</pre>
 </div>
-<div created="20190224190828929" index="style" modified="20190226142811347" tags="BreadCrumbs" title="$:/Tiddler Breadcrumbs Flat" type="application/x-tiddler-dictionary" value="flat">
+<div created="20190224190828929" index="style" modified="20190226151031750" tags="BreadCrumbs" title="$:/Tiddler Breadcrumbs Flat" type="application/x-tiddler-dictionary" value="flat">
 <pre>style: flat
 INDEX: OUI</pre>
 </div>
@@ -19150,8 +19150,8 @@ input:checked + label .grow {
 &lt;/div&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20190226020439910" modified="20190226141928032" rating="5" tags="$:/tags/Macro" title="CheckBox">
-<pre>\define CheckBox2(On:&quot;OUI&quot;, Off:&quot;NON&quot;, Con:&quot;#034B78&quot;, Coff:&quot;#3c3c3c&quot;)
+<div created="20190226020439910" modified="20190226150850451" rating="5" tags="$:/tags/Macro" title="CheckBox">
+<pre>\define CheckBox2(On:&quot;OUI&quot;, Off:&quot;NON&quot;, Con:&quot;#034B78&quot;, Coff:&quot;#3c3c3c&quot;, Data:&quot;style&quot;)
 &lt;style&gt;
 .body {
   background-color:#88888844;
@@ -19234,7 +19234,7 @@ input:checked + label .grow {
 }
 &lt;/style&gt;
 
-&lt;$checkboxex class=&quot;$On$-$Off$checkbox&quot; tiddler=&quot;$:/Tiddler Breadcrumbs Flat&quot; index=&quot;style&quot; checked=&quot;$On$&quot; unchecked=&quot;$Off$&quot;&gt; &lt;/$checkboxex&gt;
+&lt;$checkboxex class=&quot;$On$-$Off$checkbox&quot; tiddler=&quot;$:/Tiddler Breadcrumbs Flat&quot; index=$Data$ checked=&quot;$On$&quot; unchecked=&quot;$Off$&quot;&gt; &lt;/$checkboxex&gt;
 
 \end
 
@@ -21010,7 +21010,7 @@ outline:none;
          id=&quot;path484&quot;
          inkscape:connector-curvature=&quot;0&quot; /&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
 </div>
-<div created="20190224190036951" modified="20190226142756430" rating="5" tags="transparent [[Fils d'IA1]]" title="Petit-Fils d'IA1" type="text/vnd.tiddlywiki">
+<div created="20190224190036951" modified="20190226151036178" rating="5" tags="transparent [[Fils d'IA1]]" title="Petit-Fils d'IA1" type="text/vnd.tiddlywiki">
 <pre>&lt;style&gt;
 .tc-tagged-transparent {
 background-color:#00000000;
@@ -21025,7 +21025,7 @@ color:#ff0;
 &lt;span&gt;''Changer la couleur du fil d'Ariane :''&lt;/span&gt;
 &lt;&lt;CheckBox2 &quot;flat&quot; &quot;black&quot; &quot;#006200&quot; &quot;#2F4858&quot;&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;J'ai créé une nouvelle macro :&lt;/p&gt;
-&lt;$checkboxex class=&quot;OUI-NONcheckbox&quot; tiddler=&quot;$:/Tiddler Breadcrumbs Flat&quot; index=&quot;INDEX&quot; checked=&quot;OUI&quot; unchecked=&quot;NON&quot;&gt; &lt;/$checkboxex&gt;
+&lt;&lt;CheckBox2 &quot;OUI&quot; &quot;NON&quot; &quot;#00006299&quot; &quot;#2F485866&quot; &quot;INDEX&quot;&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 
 `&lt;$checkboxex class=&quot;OUI-NONcheckbox&quot; tiddler=&quot;$:/Tiddler Breadcrumbs Flat&quot; index=&quot;INDEX&quot; checked=&quot;OUI&quot; unchecked=&quot;NON&quot;&gt; &lt;/$checkboxex&gt;
