@@ -9987,9 +9987,10 @@ exports.checkboxex = CheckboxExWidget;
 })();
 </pre>
 </div>
-<div created="20190224185023833" modified="20190226140751301" title="$:/DefaultTiddlers">
+<div created="20190224185023833" modified="20190227131533455" title="$:/DefaultTiddlers">
 <pre>[[$:/Tiddler Breadcrumbs Flat]]
 [[Petit-Fils d'IA1]]
+[[CheckBox]]
 </pre>
 </div>
 <div bag="default" created="20171229183351169" modified="20190205124117102" revision="0" tags="$:/tags/ViewTemplate" title="$:/FormulasWiki/AutoSummarizeInView" type="text/vnd.tiddlywiki">
@@ -10041,7 +10042,8 @@ exports.checkboxex = CheckboxExWidget;
 <div status="complete" title="$:/Import">
 <pre>Les tiddlers suivants ont été importés :
 
-# [[$:/plugins/TheDiveO/FontAwesome]]</pre>
+# [[CheckBox]]
+# [[Petit-Fils d'IA1]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -15417,8 +15419,8 @@ exports.timer = TimerWidget;
 <div created="20190204151728661" modified="20190225232405146" title="$:/state/tab/moresidebar-2124822044">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20190204124213255" modified="20190226142621392" title="$:/state/tab/sidebar--362117970">
-<pre>$:/core/ui/SideBar/More</pre>
+<div created="20190204124213255" modified="20190227112129048" title="$:/state/tab/sidebar--362117970">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20190207091901898" modified="20190207091903652" title="$:/state/tab/sidebar--442166091">
 <pre>$:/core/ui/SideBar/More</pre>
@@ -15447,7 +15449,7 @@ exports.timer = TimerWidget;
 <div created="20190226110244022" modified="20190226110244022" title="$:/state/tree/$:/plugins/">
 <pre>show</pre>
 </div>
-<div created="20190226141659484" list="" modified="20190226142626732" title="$:/StoryList">
+<div list="[[$:/Tiddler Breadcrumbs Flat]] [[Petit-Fils d'IA1]] CheckBox" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190205093513907" modified="20190207091557313" title="$:/temp/advancedsearch">
@@ -18420,9 +18422,11 @@ input, textarea, button, select {
     }
 }</pre>
 </div>
-<div created="20190224190828929" index="style" modified="20190226142811347" tags="BreadCrumbs" title="$:/Tiddler Breadcrumbs Flat" type="application/x-tiddler-dictionary" value="flat">
-<pre>style: flat
-INDEX: OUI</pre>
+<div created="20190224190828929" index="style" modified="20190227131622771" tags="BreadCrumbs" title="$:/Tiddler Breadcrumbs Flat" type="application/x-tiddler-dictionary" value="flat">
+<pre>style: black
+INDEX: NON
+PLAY: Stop
+YESNO: NO</pre>
 </div>
 <div apex_tag="IA" caption="Le Template BreadCrumbs" created="20151230084404491" length_limit="3" list-after="$:/core/ui/ViewTemplate/subtitle" modified="20190224195604301" sub.num="02" tags="BreadCrumbs $:/tags/ViewTemplate" title="$:/Tiddler Breadcrumbs Template" type="" use_apex_tag="true">
 <pre>\define yetAgain()
@@ -19150,9 +19154,46 @@ input:checked + label .grow {
 &lt;/div&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20190226020439910" modified="20190226141928032" rating="5" tags="$:/tags/Macro" title="CheckBox">
-<pre>\define CheckBox2(On:&quot;OUI&quot;, Off:&quot;NON&quot;, Con:&quot;#034B78&quot;, Coff:&quot;#3c3c3c&quot;)
+<div created="20190226020439910" modified="20190227131257731" rating="5" tags="$:/tags/Macro" title="CheckBox">
+<pre>\define CheckBox2(On:&quot;Oui&quot;, Off:&quot;Non&quot;, Con:&quot;#034B78&quot;, Coff:&quot;#9c3c3c&quot;, Data:&quot;style&quot;, tooltip:&quot;Clic&quot; )
 &lt;style&gt;
+.$On$-$Off$tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.$On$-$Off$tooltip .$On$-$Off$tooltiptext{
+  visibility: hidden;
+  width: 140px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.$On$-$Off$tooltiptext{
+  background-color:$Con$;
+}
+
+.$On$-$Off$tooltip .$On$-$Off$tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: $Coff$ transparent transparent transparent;
+}
+
+.$On$-$Off$tooltip:hover .$On$-$Off$tooltiptext {
+  visibility: visible;
+}
 .body {
   background-color:#88888844;
   margin:0 0;
@@ -19219,6 +19260,12 @@ input:checked + label .grow {
   margin:1px;
 }
 
+
+.$On$-$Off$checkbox + label {
+  margin-left:19px;
+  background-color:$Coff$;
+  color:#FFFFFF99;
+}
 .$On$-$Off$checkbox label:before {
   content:attr(data-off);
 }
@@ -19228,21 +19275,22 @@ input:checked + label .grow {
   background-color:$Con$;
   color:#FFFFFF99;
 }
-
 .$On$-$Off$checkbox input:checked + label:before {
   content:attr(data-on);
 }
 &lt;/style&gt;
-
-&lt;$checkboxex class=&quot;$On$-$Off$checkbox&quot; tiddler=&quot;$:/Tiddler Breadcrumbs Flat&quot; index=&quot;style&quot; checked=&quot;$On$&quot; unchecked=&quot;$Off$&quot;&gt; &lt;/$checkboxex&gt;
+&lt;div class=&quot;$On$-$Off$tooltip&quot;&gt;
+&lt;$checkboxex class=&quot;$On$-$Off$checkbox&quot; tiddler=&quot;$:/Tiddler Breadcrumbs Flat&quot; index=$Data$ checked=&quot;$On$&quot; unchecked=&quot;$Off$&quot;&gt; &lt;/$checkboxex&gt;
+  &lt;span class=&quot;$On$-$Off$tooltiptext&quot;&gt;$tooltip$&lt;/span&gt;
+&lt;/div&gt;
 
 \end
 
 &lt;div class=&quot;body&quot;&gt;
-&lt;&lt;CheckBox2 Play Stop &quot;#A93B00&quot;&gt;&gt;
-&lt;&lt;CheckBox2 &quot;Flat&quot; &quot;Black&quot; &quot;#006200&quot; &quot;#2F4858&quot;&gt;&gt;
-&lt;&lt;CheckBox2 &quot;&quot; &quot;&quot; &quot;#006B5F&quot; &quot;#659B91&quot;&gt;&gt;
-&lt;&lt;CheckBox2 &quot;YES&quot; &quot;NO&quot; &quot;#034B78&quot; &quot;#111111&quot;&gt;&gt;
+&lt;&lt;CheckBox2 Play Stop &quot;#A93B00&quot; &quot;&quot; &quot;PLAY&quot; &quot;Play&quot;&gt;&gt;
+&lt;&lt;CheckBox2 &quot;Flat&quot; &quot;Black&quot; &quot;#006200&quot; &quot;#2F4858&quot; &quot;style&quot; &quot;Changer la couleur du fil d’Ariane, black ou flat&quot;&gt;&gt;
+&lt;&lt;CheckBox2 &quot;Oui&quot; &quot;Non&quot; &quot;#659B91&quot; &quot;#006B5F&quot; &quot;INDEX&quot; &quot;Oui ou Non il faut choisir&quot;&gt;&gt;
+&lt;&lt;CheckBox2 &quot;YES&quot; &quot;NO&quot; &quot;#034B78&quot; &quot;#222222&quot; &quot;YESNO&quot; &quot;Yes or No?&quot;&gt;&gt;
 &lt;/div&gt;</pre>
 </div>
 <div created="20190226012443054" modified="20190226012452196" rating="5" title="Créer une to-do list">
@@ -21010,7 +21058,7 @@ outline:none;
          id=&quot;path484&quot;
          inkscape:connector-curvature=&quot;0&quot; /&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
 </div>
-<div created="20190224190036951" modified="20190226142756430" rating="5" tags="transparent [[Fils d'IA1]]" title="Petit-Fils d'IA1" type="text/vnd.tiddlywiki">
+<div created="20190224190036951" modified="20190227131752982" rating="5" tags="transparent [[Fils d'IA1]]" title="Petit-Fils d'IA1" type="text/vnd.tiddlywiki">
 <pre>&lt;style&gt;
 .tc-tagged-transparent {
 background-color:#00000000;
@@ -21023,9 +21071,9 @@ color:#ff0;
 
 &lt;div class=&quot;body&quot;&gt;
 &lt;span&gt;''Changer la couleur du fil d'Ariane :''&lt;/span&gt;
-&lt;&lt;CheckBox2 &quot;flat&quot; &quot;black&quot; &quot;#006200&quot; &quot;#2F4858&quot;&gt;&gt;
+&lt;&lt;CheckBox2 &quot;flat&quot; &quot;black&quot; &quot;#006200&quot; &quot;#2F4858&quot; &quot;style&quot; &quot;Changer la couleur du fil d'Ariane&quot;&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;J'ai créé une nouvelle macro :&lt;/p&gt;
-&lt;$checkboxex class=&quot;OUI-NONcheckbox&quot; tiddler=&quot;$:/Tiddler Breadcrumbs Flat&quot; index=&quot;INDEX&quot; checked=&quot;OUI&quot; unchecked=&quot;NON&quot;&gt; &lt;/$checkboxex&gt;
+&lt;&lt;CheckBox2 &quot;OUI&quot; &quot;NON&quot; &quot;#00006299&quot; &quot;#2F485866&quot; &quot;INDEX&quot; &quot;Vraiment ?&quot;&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 
 `&lt;$checkboxex class=&quot;OUI-NONcheckbox&quot; tiddler=&quot;$:/Tiddler Breadcrumbs Flat&quot; index=&quot;INDEX&quot; checked=&quot;OUI&quot; unchecked=&quot;NON&quot;&gt; &lt;/$checkboxex&gt;
